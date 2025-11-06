@@ -41,8 +41,8 @@ def test_helpychat_login(driver):
     login_button.click()
 
     # 6️⃣ 페이지 이동 대기
-    time.sleep(10)
+    time.sleep(6)
 
     # 7️⃣ 로그인 성공 검증
-    assert "qatrack.elice.io" in driver.current_url
+    assert "qaproject.elice.io" in driver.current_url
     print("✅ HelpyChat 로그인 자동화 테스트 성공!")
