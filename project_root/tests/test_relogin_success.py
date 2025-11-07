@@ -23,6 +23,8 @@ def test_ACCT008_relogin_success(driver,login):
     wait.until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, "div[data-elice-user-profile-content='true']"))
     )
+    
+    # UI가 완전히 뜰 때까지 조금 더 대기(다른 요소에 의한 요소 가림 방지) 
     time.sleep(1)
 
     logout_button = wait.until(
