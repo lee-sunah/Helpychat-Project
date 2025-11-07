@@ -13,6 +13,7 @@ def test_ACCT009_logout_success(driver,login):
     assert "qaproject.elice.io" in driver.current_url, "[FAIL] 로그인 실패"
     print("✅ [PASS] 로그인 성공")
 
+
     # 로그아웃 시도 / 프로필 클릭
     profile = wait.until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.MuiAvatar-root"))
@@ -23,6 +24,9 @@ def test_ACCT009_logout_success(driver,login):
     wait.until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, "div[data-elice-user-profile-content='true']"))
     )
+
+    # UI가 완전히 뜰 때까지 조금 더 대기(다른 요소에 의한 요소 가림 방지) 
+    time.sleep(1)
 
     # 로그아웃 버튼 클릭
     logout_button = wait.until(
