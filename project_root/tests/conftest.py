@@ -6,6 +6,7 @@ from datetime import datetime
 from selenium.webdriver.common.by import By
 import time
 from src.pages.login_page import LoginPage
+from src.pages.agent_page import AgentPage
 
 
 @pytest.fixture(scope="function")
@@ -38,3 +39,15 @@ def login(driver):
     login_page.login()
     time.sleep(3)
     return login_page
+
+
+@pytest.fixture
+def new_agent(driver):
+    """로그인 후 커스텀 에이전트 생성 페이지로 이동한 상태를 반환"""
+    login_page = LoginPage(driver)
+    login_page.page_open()
+    login_page.login()
+
+    agent_page = AgentPage(driver)
+    agent_page.agent_create()
+    return agent_page
