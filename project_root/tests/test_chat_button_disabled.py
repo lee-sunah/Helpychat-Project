@@ -7,10 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from src.pages.login_page import LoginPage
 
 # CBAS003: 입력창 공백 → 전송 버튼 비활성화 상태 확인
-def test_CBAS003_button_disabled_when_empty(driver):
-    login_page = LoginPage(driver)
-    login_page.page_open()
-    login_page.login()
+def test_CBAS003_button_disabled_when_empty(driver, login):
     
     # 입력창 로드 확인
     input_box = WebDriverWait(driver, 10).until(
@@ -28,6 +25,6 @@ def test_CBAS003_button_disabled_when_empty(driver):
     is_disabled = send_button.get_attribute("disabled")
     
     # 검증: disabled 속성이 존재해야 함
-    assert is_disabled is not None, "❌ [FAIL] 입력창이 공백이지만 버튼이 활성화되어 있습니다."
-    print("✅ [PASS] 입력창이 공백일 때 전송 버튼 클릭 불가(비활성화) 상태 확인 완료")
+    assert is_disabled is not None, "⛔ [FAIL] 전송 버튼 활성화 상태"
+    print("✅ [PASS] 전송 버튼 클릭 불가(비활성화) 상태 확인 완료")
     

@@ -7,10 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from src.pages.login_page import LoginPage
 
 # CBAS002: 연속 질문 → 응답 확인
-def test_CBAS002_chat_continuous(driver):
-    login_page = LoginPage(driver)
-    login_page.page_open()
-    login_page.login()
+def test_CBAS002_chat_continuous(driver, login):
     
     # 첫 번째 질문
     first_question = "오늘 서울 날씨 어때?"
@@ -31,17 +28,17 @@ def test_CBAS002_chat_continuous(driver):
     print(f"✅ [PASS] 첫 번째 질문 전송 완료: {first_question}")
     
     # 첫 번째 질문 AI 응답 대기 및 확인
-    WebDriverWait(driver, 15).until(
+    WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div[data-step-type='assistant_message'] .message-content"))
     )
-    time.sleep(20)
+    time.sleep(3)
     
     # 첫 번째 응답 텍스트 확인
     responses = driver.find_elements(By.CSS_SELECTOR, "div[data-step-type='assistant_message'] .message-content")
     first_response = responses[-1].get_attribute("innerText")
     
-    assert len(first_response) > 0, "❌ [FAIL] 첫 번째 AI 응답이 표시되지 않았습니다."
-    print("✅ [PASS] 첫 번째 응답 확인 완료:", first_response[:100])
+    assert len(first_response) > 0, "⛔ [FAIL] 첫 번째 AI 응답 확인 실패"
+    print("✅ [PASS] 첫 번째 AI 응답 확인 완료")
     
     # 두 번째 질문 (연속 질문)
     second_question = "그럼 내일은?"
@@ -68,6 +65,6 @@ def test_CBAS002_chat_continuous(driver):
     responses = driver.find_elements(By.CSS_SELECTOR, "div[data-step-type='assistant_message'] .message-content")
     second_response = responses[-1].get_attribute("innerText")
 
-    assert len(second_response) > 0, "❌ [FAIL] 두 번째 AI 응답이 표시되지 않았습니다."
-    print("✅ [PASS] 두 번째 응답 확인 완료:", second_response[:100])
+    assert len(second_response) > 0, "⛔ [FAIL] 두 번째 AI 응답 확인 실패"
+    print("✅ [PASS] 두 번째 AI 응답 확인 완료")
     
