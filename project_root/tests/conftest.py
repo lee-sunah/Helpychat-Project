@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from src.pages.login_page import LoginPage
 from selenium.webdriver.support.ui import WebDriverWait
+#from src.pages.agent_page import AgentPage
 
 
 @pytest.fixture(scope="function")
@@ -32,6 +33,7 @@ def send_test_message(driver):
         time.sleep(3)
     return _create_chat
 
+
 @pytest.fixture
 def login(driver):
     """HelpyChat 로그인 fixture"""
@@ -40,6 +42,7 @@ def login(driver):
     login_page.login()
     time.sleep(3)
     return login_page
+
 
 @pytest.fixture
 def click_plus(driver):
@@ -58,3 +61,17 @@ def click_plus(driver):
         time.sleep(1)
 
     return _click
+
+'''
+@pytest.fixture
+def new_agent(driver):
+    """로그인 후 커스텀 에이전트 생성 페이지로 이동한 상태를 반환"""
+    login_page = LoginPage(driver)
+    login_page.page_open()
+    login_page.login()
+
+    agent_page = AgentPage(driver)
+    agent_page.agent_create()
+    return agent_page
+
+'''
