@@ -6,10 +6,7 @@ from src.utils.config_reader import read_config
 
 
 def test_CADV0013_sequential_add_files_single_message(driver, login, send_test_message):
-    """
-    ✅ 로그인 후 채팅창을 한 번만 열고
-    jpg 파일 3개를 하나씩 순차 첨부 후, 한 메시지로 전송하는 테스트
-    """
+    """jpg 파일 3개를 하나씩 순차 첨부 후, 한 메시지로 전송하는 테스트"""
 
     # 설정 로드
     config = read_config("helpychat")

@@ -8,9 +8,7 @@ from src.utils.config_reader import read_config
 
 
 def test_CADV011_hwp_upload_reject(driver, login):
-    """
-    ❌ 20mb 이상 크기의 파일 업로드 시 'File is larger than 20 MB' 경고 문구가 표시되는지 확인
-    """
+    """20mb 이상 크기의 파일 업로드 시 'File is larger than 20 MB' 경고 문구가 표시되는지 확인"""
 
     # 설정 로드
     config = read_config("helpychat")

@@ -8,9 +8,7 @@ from src.utils.config_reader import read_config
 
 
 def test_CADV011_hwp_upload_reject(driver, login):
-    """
-    ❌ ZIP 파일 업로드 시 'File type not allowed' 경고 문구가 표시되는지 확인
-    """
+    """ZIP 파일 업로드 시 'File type not allowed' 경고 문구가 표시되는지 확인"""
 
     # 설정 로드
     config = read_config("helpychat")

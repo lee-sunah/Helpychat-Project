@@ -6,9 +6,7 @@ from src.utils.config_reader import read_config
 
 
 def test_CADV005_multi_file_upload_single_session(driver, login, send_test_message):
-    """
-    jpg, txt, pdf 파일을 연속 첨부하여 업로드가 정상 동작하는지 확인
-    """
+    """jpg, txt, pdf 파일을 연속 첨부하여 업로드가 정상 동작하는지 확인"""
 
     # 설정 로드
     config = read_config("helpychat")

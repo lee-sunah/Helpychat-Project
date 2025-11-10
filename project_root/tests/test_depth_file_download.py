@@ -84,4 +84,4 @@ def test_CADV027_CADV028_deep_investigation_request(driver, login, click_plus, s
     hwp_downloaded = wait_for_download(".hwp", before_files)
     assert hwp_downloaded, "❌ 한글(.hwp) 파일이 다운로드되지 않았습니다."
 
-    print("🎉 모든 파일 다운로드 검증 완료 ✅")
+    print("✅ 모든 파일 다운로드 검증 완료")
