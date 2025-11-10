@@ -2,12 +2,12 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from src.pages.login_page import LoginPage
-from src.pages.agent_page import AgentPage
+from src.pages.agent_enter_page import AgentEnterPage
 
 def test_HIST025_agent_btn(driver,login) :
 
     # 에이전트 페이지 접속
-    agent_page = AgentPage(driver)
+    agent_page = AgentEnterPage(driver)
     agent_page.open()
 
     # 에이전트 리스트 중 첫번째 에이전트 선택

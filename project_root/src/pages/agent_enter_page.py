@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 import time
 
-class AgentPage:
+class AgentEnterPage:
     """HelpyChat 에이전트 페이지 객체"""
 
     def __init__(self, driver):

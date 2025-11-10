@@ -1,12 +1,12 @@
 import time
 from selenium.webdriver.common.by import By
 from src.pages.login_page import LoginPage
-from src.pages.agent_page import AgentPage
+from src.pages.agent_enter_page import AgentEnterPage
 
 def test_HIST020_search_agent(driver,login) :
 
     # 에이전트 페이지 접속
-    agent_page = AgentPage(driver)
+    agent_page = AgentEnterPage(driver)
     agent_page.open()
 
     # 에이전트 검색 
