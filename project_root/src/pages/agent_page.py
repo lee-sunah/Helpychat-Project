@@ -23,8 +23,6 @@ class AgentPage:
         self.browsing_function = (By.CSS_SELECTOR, "input[value='web_browsing']")
         self.image_function = (By.CSS_SELECTOR, "input[value='image_generation']")
         self.execution_function = (By.CSS_SELECTOR, "input[value='code_execution']")
-        # 자동저장 ui
-        self.auto_save = (By.XPATH, "//span[text()='저장됨']")
         # 만들기 버튼
         self.create_button = (By.XPATH, "//button[text()='만들기']")
         # 공개설정 저장버튼
@@ -80,11 +78,6 @@ class AgentPage:
         for function in functions:
             self.checkbox_function(function)
 
-    # 자동 저장까지 대기
-    def wait_for_save(self):
-        WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.auto_save)
-        )
     # 만들기 버튼 활성화까지 대기
     def wait_for_button(self):
         WebDriverWait(self.driver, 10).until(
@@ -102,6 +95,3 @@ class AgentPage:
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.save_button)
         ).click()
-
-    def refresh(self):
-        self.driver.refresh()
