@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from src.pages.login_page import LoginPage
 
 
-def test_HIST028_agent_btn(driver,login,send_test_message) :
+def test_HIST030_list_click(driver,login,send_test_message) :
 
     # 테스트용 메세지 전송
     send_test_message("히스토리 목록 클릭 테스트 메세지(답장하지마)")
