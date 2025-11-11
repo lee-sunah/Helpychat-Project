@@ -11,6 +11,11 @@ def test_CSTM021_my_agent(driver,login) :
     agent_page = AgentEnterPage(driver)
     agent_page.open()
 
+    my_agent_btn = driver.find_element(By.LINK_TEXT, "내 에이전트")
+    my_agent_btn.click()
+    time.sleep(3)
+
+    
 
 
 
