@@ -30,7 +30,7 @@ def driver():
     }
     chrome_options.add_experimental_option("prefs", prefs)
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
     #driver.maximize_window()
     driver.implicitly_wait(5)
     yield driver
