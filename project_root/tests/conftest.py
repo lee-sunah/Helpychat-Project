@@ -55,7 +55,7 @@ def new_agent(driver):
     agent_page.agent_create()
     return agent_page
 
-
+@pytest.fixture
 def click_plus(driver):
     """HelpyChat의 '+ 버튼' 클릭 """
     wait = WebDriverWait(driver, 15)
@@ -72,5 +72,3 @@ def click_plus(driver):
         time.sleep(1)
 
     return _click
-
-
