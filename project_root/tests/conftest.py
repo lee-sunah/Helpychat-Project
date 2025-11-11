@@ -9,11 +9,27 @@ import time
 from src.pages.login_page import LoginPage
 from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.agent_page import AgentPage
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope="function")
 def driver():
     """공통 WebDriver 설정"""
+    chrome_options = Options()
+    chrome_options.add_argument("--disable-notifications")  # 알림창 차단
+    chrome_options.add_argument("--disable-popup-blocking")  # 팝업 차단 해제
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+
+    # 💡 '여러 파일 다운로드' 자동 허용 설정
+    prefs = {
+        "profile.default_content_setting_values.automatic_downloads": 1,  # 여러 파일 다운로드 허용
+        "profile.default_content_setting_values.popups": 0,
+        "profile.default_content_setting_values.notifications": 2,  # 알림 비활성화
+        "download.prompt_for_download": False,  # 다운로드 다이얼로그 안 띄움
+    }
+    chrome_options.add_experimental_option("prefs", prefs)
+
     driver = webdriver.Chrome()
     #driver.maximize_window()
     driver.implicitly_wait(5)

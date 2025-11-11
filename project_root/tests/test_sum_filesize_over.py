@@ -24,7 +24,8 @@ def test_CADV0013_sequential_add_files_single_message(driver, login, send_test_m
     # 파일 2개를 하나씩 첨부 버튼으로 추가
     for filename in files:
         chat_page.upload_image(filename)
-        time.sleep(1)
+        print(f"⏳ {filename} 업로드 완료, 다음 파일 준비 중...")
+        time.sleep(2)
 
     # 모든 파일 첨부 후 메시지 전송
     send_test_message("합쳐서 20mb 이상인 파일 두 개 첨부 테스트")
