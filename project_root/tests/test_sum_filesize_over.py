@@ -1,12 +1,14 @@
 import pytest
 import time
-from pathlib import Path
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from src.pages.image_upload_page import HelpyChatPage
 from src.utils.config_reader import read_config
 
 
-def test_CADV0013_sequential_add_files_single_message(driver, login, send_test_message):
-    """jpg 파일 3개를 하나씩 순차 첨부 후, 한 메시지로 전송하는 테스트"""
+def test_CADV011_hwp_upload_reject(driver, login):
+    """20mb 이상 크기의 파일 업로드 시 'File is larger than 20 MB' 경고 문구가 표시되는지 확인"""
 
     # 설정 로드
     config = read_config("helpychat")
@@ -18,23 +20,23 @@ def test_CADV0013_sequential_add_files_single_message(driver, login, send_test_m
 
     chat_page = HelpyChatPage(driver)
 
-    # 업로드할 파일 리스트
-    files = ["18mb.jpg", "6.05mb.jpg"]
+    # 업로드 시도
+    filename = "20.5mb.jpg"
+    chat_page.upload_image(filename)
 
-    # 파일 2개를 하나씩 첨부 버튼으로 추가
-    for filename in files:
-        chat_page.upload_image(filename)
-        time.sleep(1)
+    # 경고 문구 대기 및 확인
+    wait = WebDriverWait(driver, 10)
 
-    # 모든 파일 첨부 후 메시지 전송
-    send_test_message("합쳐서 20mb 이상인 파일 두 개 첨부 테스트")
+    try:
+        alert_element = wait.until(
+            EC.visibility_of_element_located(
+                (By.XPATH, "//*[contains(text(), 'File is larger than 20 MB')]")
+            )
+        )
+        assert alert_element.is_displayed(), "경고 문구가 표시되지 않았습니다."
+        print(f"✅ 업로드 실패 경고 표시 확인: {filename}")
 
-    # 업로드 확인
-    time.sleep(5)
-    page_src = driver.page_source
-    for filename in files:
-        assert "<img" in page_src or filename.split(".")[0] in page_src, f"{filename} 업로드 실패"
-        print(f"✅ {filename} 업로드 확인 완료")
+    except Exception:
+        pytest.fail(f"❌ 업로드 실패 문구를 찾을 수 없습니다: {filename}")
 
-    print("✅ 두 파일 첨부 및 메시지 전송 완료")
-    time.sleep(5)
+    time.sleep(3)
