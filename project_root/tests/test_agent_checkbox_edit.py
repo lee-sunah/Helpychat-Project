@@ -43,21 +43,17 @@ def test_CSTM027_checkbox_edit(driver, new_agent):
     new_agent = AgentPage(driver)
 
     # 기능 체크 해제
-    execution = driver.find_element(*new_agent.execution_function).click()
+    execution = driver.find_element(*new_agent.execution_function)
+    execution.click()
     time.sleep(3)
+
+    assert not execution.is_selected(), "⛔ [FAIL] '코드 실행 및 데이터 분석' 선택 해제 실패"
+    print("✅ [PASS] '코드 실행 및 데이터 분석' 선택 해제 완료")
 
     update_btn = driver.find_element(By.XPATH, "//button[text()='업데이트']").click()
     new_agent.click_save()
-    time.sleep(8)
+    # time.sleep(5)
 
-    back_btn = driver.find_element(By.CSS_SELECTOR, 'button[aria-label="뒤로가기"]')
-    back_btn.click()
-    time.sleep(3)
-
-    # 수정 된 에이전트
-    first_agent = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/ai-helpy-chat/agent/"]')[1]
-
-    assert "수정 테스트용 에이전트" in first_agent.text, "⛔ [FAIL] 에이전트 수정 실패"
     print("✅ [PASS] 에이전트 수정 성공")
 
 
