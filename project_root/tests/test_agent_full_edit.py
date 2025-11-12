@@ -13,7 +13,6 @@ def test_CSTM024_my_agent_edit(driver, new_agent):
     # 수정용 에이전트 생성
     new_agent.set_name("수정 테스트용 에이전트") 
     new_agent.set_description("한줄 소개 테스트")
-    # time.sleep(0.5)
     new_agent.set_rules("수정 테스트") 
     new_agent.set_start_message("수정 테스트 에이전트 입니다.")
     wait = WebDriverWait(new_agent.driver, 10) 
