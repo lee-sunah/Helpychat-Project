@@ -7,6 +7,7 @@ from src.pages.login_page import LoginPage
 
 
 def test_HIST035_chat_edit(driver,login,send_test_message) :
+    time.sleep(5)
 
     # 테스트용 메세지 전송
     send_test_message("히스토리 제목 수정 테스트(답장하지마)")

@@ -4,7 +4,8 @@ from src.pages.login_page import LoginPage
 
 
 def test_HIST028_history_list(driver,login,send_test_message) :
-
+    time.sleep(5)
+    
     # 테스트용 메세지 전송
     send_test_message("히스토리 목록 최신순 확인용 메세지(답장하지마)")
     time.sleep(3)

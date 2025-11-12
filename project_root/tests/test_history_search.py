@@ -5,6 +5,7 @@ from src.pages.login_page import LoginPage
 
 
 def test_HIST003_history_search(driver,send_test_message,login) :
+    time.sleep(5)
 
     # 새 채팅 세션을 만들기 위한 기존 세션 생성
     send_test_message("테스트 키워드 : 엘리스")
