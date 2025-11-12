@@ -36,9 +36,8 @@ def test_CSTM011_large_image(new_agent):
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     image_path = os.path.join(project_root, "src", "resources", "20.5mb.jpg")
 
-    # 1. "+"버튼/사진 업로드 버튼 클릭 
+    # 1. "+"버튼 클릭 
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "svg[data-testid='plusIcon']"))).click()
-    new_agent.driver.find_element(By.XPATH, "//li[normalize-space(text())='사진 업로드']").click()
 
     # 2. 숨겨진 input 찾기 / 업로드
     file_input = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))).send_keys(image_path)
