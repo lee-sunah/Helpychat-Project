@@ -17,6 +17,9 @@ class HelpyChatPage:
         )
         self.driver.execute_script("arguments[0].closest('button').click();", plus_button)
 
+         # ⭐ HelpyChat UI 렌더링 안정화를 위해 추가 -> 테스트가 도중에 자꾸 종료됨
+        time.sleep(0.5)
+
         # 숨겨진 input[type=file] 직접 접근
         file_input = self.wait.until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "#upload-button-input[type='file']"))

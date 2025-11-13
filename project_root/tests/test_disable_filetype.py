@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from src.pages.image_upload_page import HelpyChatPage
 from src.utils.config_reader import read_config
+from selenium.common.exceptions import TimeoutException
 
 
 def test_CADV011_file_upload_reject(driver, login):
@@ -36,11 +37,15 @@ def test_CADV011_file_upload_reject(driver, login):
                     "//*[contains(text(), 'File type') or contains(text(), 'not allowed') or contains(text(), '허용되지')]"
                 ))
             )
-            assert alert_element.is_displayed(), f"❌ {filename} 업로드 시 경고 문구가 표시되지 않았습니다."
+            assert alert_element.is_displayed(), (
+                f"❌ {filename} 업로드 시 경고 문구가 표시되지 않았습니다."
+            )
             print(f"✅ 업로드 실패 경고 표시 확인됨: {filename}")
 
-        except Exception:
-            pytest.fail(f"❌ [FAIL] 업로드 실패 문구를 찾을 수 없습니다: {filename}")
+        except TimeoutException:
+            pytest.fail(
+                f"❌ [FAIL] 업로드 실패 문구가 제한 시간 내에 표시되지 않았습니다: {filename}"
+            )
 
         time.sleep(2)
 
