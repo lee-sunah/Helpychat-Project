@@ -14,8 +14,6 @@ def test_BILL001_credit_check(login):
     credit_element = wait.until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "a[href='https://qaproject.elice.io/admin/org/billing/payments/credit']"))
     )
-    # time.sleep(2)
-
     # 3. 텍스트 추출
     credit_text = credit_element.text.strip()
     print(f"추출 결과: {credit_text}")
