@@ -39,30 +39,15 @@ def test_CSTM025_my_agent_light_edit(driver, new_agent):
     new_agent = AgentPage(driver)
 
     # 기존 이름 지우고 수정
-    name = driver.find_element(*new_agent.name_field)
-    name.click()
-    current_value = name.get_attribute("value")
-    for _ in range(len(current_value)):
-        name.send_keys(Keys.BACKSPACE)
-    time.sleep(0.2)
+    new_agent.clear_input("name_field")
     new_agent.set_name("일부 수정 완료 된 에이전트")
 
     # 기존 한줄소개 지우고 수정
-    desc = driver.find_element(By.CSS_SELECTOR, "input[name='description']")
-    desc.click()
-    current_value = desc.get_attribute("value")
-    for _ in range(len(current_value)):
-        desc.send_keys(Keys.BACKSPACE)
-    time.sleep(0.2)
+    new_agent.clear_input("description_field")
     new_agent.set_description("일부 수정 완료 된 한줄소개")
 
     # 기존 규칙 지우고 수정
-    rules = driver.find_element(*new_agent.rules_field)
-    rules.click()
-    current_value = rules.get_attribute("value")
-    for _ in range(len(current_value)):
-        rules.send_keys(Keys.BACKSPACE)
-    time.sleep(0.2)
+    new_agent.clear_input("rules_field")
     new_agent.set_rules("일부 수정 완료 된 테스트 에이전트 입니다.")
     time.sleep(2)
 
@@ -77,5 +62,5 @@ def test_CSTM025_my_agent_light_edit(driver, new_agent):
     # 수정 된 에이전트
     first_agent = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/ai-helpy-chat/agent/"]')[1]
 
-    assert "수정 완료 된 에이전트" in first_agent.text, "⛔ [FAIL] 에이전트 수정 실패"
-    print("✅ [PASS] 에이전트 수정 성공")
+    assert "일부 수정 완료 된 에이전트" in first_agent.text, "⛔ [FAIL] 에이전트 일부 수정 실패"
+    print("✅ [PASS] 에이전트 일부 수정 성공")
