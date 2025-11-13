@@ -29,7 +29,7 @@ def test_CSTM030_agent_delete(driver, new_agent):
     # 내 에이전트 이동
     my_agent_btn = driver.find_element(By.LINK_TEXT, "내 에이전트")
     my_agent_btn.click()
-    time.sleep(5)
+    time.sleep(2)
 
     # 에이전트 삭제
     first_agent = driver.find_elements(By.CSS_SELECTOR, 'button svg[data-testid="trashIcon"]')[0].click()
