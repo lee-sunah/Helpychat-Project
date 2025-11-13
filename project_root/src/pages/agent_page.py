@@ -50,6 +50,7 @@ class AgentPage(BasePage):
         el = self.driver.find_element(*self.locators["name_field"])
         el.clear()
         el.send_keys(name)
+        time.sleep(0.5)
 
     def set_description(self, desc):
         description_el = self.driver.find_element(By.CSS_SELECTOR, "input[name='description']")
