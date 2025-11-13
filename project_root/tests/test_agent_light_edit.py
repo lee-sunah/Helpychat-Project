@@ -62,5 +62,5 @@ def test_CSTM025_my_agent_light_edit(driver, new_agent):
     # 수정 된 에이전트
     first_agent = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/ai-helpy-chat/agent/"]')[1]
 
-    assert "수정 완료 된 에이전트" in first_agent.text, "⛔ [FAIL] 에이전트 수정 실패"
-    print("✅ [PASS] 에이전트 수정 성공")
+    assert "일부 수정 완료 된 에이전트" in first_agent.text, "⛔ [FAIL] 에이전트 일부 수정 실패"
+    print("✅ [PASS] 에이전트 일부 수정 성공")
