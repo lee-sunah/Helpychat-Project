@@ -39,7 +39,7 @@ def test_CSTM027_checkbox_edit(driver, new_agent):
     new_agent = AgentPage(driver)
 
     # 기능 체크 해제
-    execution = driver.find_element(*new_agent.execution_function)
+    execution = driver.find_element(*new_agent.locators["execution_function"])
     execution.click()
     time.sleep(3)
 
