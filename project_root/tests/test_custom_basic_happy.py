@@ -39,6 +39,7 @@ def test_CSTM008_extreme_input(new_agent):
         )
     name.send_keys(" ")  # React 감지용
     name.send_keys("\b")
+    time.sleep(0.5)
 
     # JavaScript로 규칙 필드 입력 / 강제 이벤트 실행
     rules = new_agent.driver.find_element(*new_agent.locators["rules_field"])
