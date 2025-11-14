@@ -76,9 +76,9 @@ def new_agent(driver):
     login_page.page_open()
     login_page.login()
 
-    #agent_page = AgentPage(driver)
-    #agent_page.agent_create()
-    #return agent_page
+    agent_page = AgentPage(driver)
+    agent_page.agent_create()
+    return agent_page
 
 
 @pytest.fixture
