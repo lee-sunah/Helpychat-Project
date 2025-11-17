@@ -1,15 +1,16 @@
 import pytest
+import os
+import shutil
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import time
 from src.pages.login_page import LoginPage
 from selenium.webdriver.support.ui import WebDriverWait
-from src.pages.agent_page import AgentPage
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import InvalidElementStateException
-import os
-import shutil
+from src.utils.allure_helper import attach_screenshot
+from src.pages.agent_page import AgentPage
 
 
 @pytest.fixture(scope="function")
@@ -140,3 +141,16 @@ def pytest_sessionstart(session):
     # 삭제 후 새 폴더 생성
     os.makedirs(allure_reports_dir, exist_ok=True)
     print("📁 Allure reports 폴더 생성 완료!")
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    """테스트 실패 시 자동으로 스크린샷 첨부"""
+    outcome = yield
+    result = outcome.get_result()
+
+    # 테스트 단계가 실패(FAILED)일 때만
+    if result.when == "call" and result.failed:
+        driver = item.funcargs.get("driver")
+        if driver:
+            attach_screenshot(driver, name=item.name)
