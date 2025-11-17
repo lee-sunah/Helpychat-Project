@@ -8,6 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.agent_page import AgentPage
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import InvalidElementStateException
+import os
+import shutil
 
 
 @pytest.fixture(scope="function")
@@ -119,3 +121,22 @@ def language(login2):
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div[data-menu-id='locale_setting']"))).click()
     time.sleep(1) # UI가 완전히 뜰 때까지 조금 더 대기(다른 요소에 의한 요소 가림 방지)
     return driver
+
+
+@pytest.hookimpl
+def pytest_sessionstart(session):
+    """
+    테스트 시작 전 Allure reports 폴더 초기화
+    """
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    allure_reports_dir = os.path.join(base_dir, "reports", "allure")
+
+    print("🧹 삭제할 Allure 폴더:", allure_reports_dir)
+
+    if os.path.exists(allure_reports_dir):
+        shutil.rmtree(allure_reports_dir)
+        print("✔ Allure reports 폴더 삭제 완료!")
+
+    # 삭제 후 새 폴더 생성
+    os.makedirs(allure_reports_dir, exist_ok=True)
+    print("📁 Allure reports 폴더 생성 완료!")
