@@ -66,7 +66,8 @@ pipeline {
             ])
             allure([
                 includeProperties: false,
-                results: [[path: "${WORKDIR}/reports/allure"]]
+                results: [[path: "${WORKDIR}/reports/allure"]],
+                commandline: 'Allure'
             ])
         }
 
