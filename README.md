@@ -4,8 +4,9 @@
 
 | 분류 | 기술 / 도구 |
 |------|-------------|
-| **Testing** | ![Python](./icons/python.png) Python, ![Pytest](./icons/pytest.png) Pytest, ![Selenium](./icons/selenium.png) Selenium, ![Xdist](./icons/xdist.png) Pytest-xdist, ![Rerun](./icons/rerun.png) Pytest-rerunfailures, ![Allure](./icons/allure.png) Allure Report |
-| **DevOps** | ![Jenkins](./icons/jenkins.png) Jenkins, ![Docker](./icons/docker.png) Docker, ![GitLab](./icons/gitlab.png) GitLab, ![Webhook](./icons/webhook.png) Webhook, ![AllurePlugin](./icons/allure_plugin.png) Allure Jenkins Plugin |
+| **Testing** | [![Python](https://img.shields.io/badge/python-3.10+-blue)](#), [![Pytest](https://img.shields.io/badge/pytest-automation-green)](#), [![Selenium](https://img.shields.io/badge/selenium-automation-green)](#), Pytest-xdist, Pytest-rerunfailures, [![Allure](https://img.shields.io/badge/report-allure-important)](#) |
+| **DevOps** | [![Jenkins](https://img.shields.io/badge/jenkins-ci-orange)](#), [![Docker](https://img.shields.io/badge/docker-container-blue)](#), GitLab, Webhook, Allure Jenkins Plugin |
+
 
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
