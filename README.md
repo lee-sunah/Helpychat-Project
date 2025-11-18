@@ -123,4 +123,45 @@ GPT·Claude·Helpy Pro 등 다양한 AI 모델과 기능을 한 곳에서 제공
 ---
 
 ## 📂 프로젝트 폴더 구조
+project_root/
+├── tests/
+│ ├── login/
+│ ├── chat/
+│ └── admin/
+├── pages/
+├── utils/
+├── conftest.py
+├── Jenkinsfile
+└── requirements.txt
+
+
+---
+
+## 🚨 트러블슈팅 기록
+
+- 병렬 실행 시 WebDriver 충돌 → 워커별 세션 분리  
+- 테스트 속도 문제 → xdist + headless 적용  
+- Flaky 테스트 발생 → rerunfailures로 안정화  
+- Allure 결과 생성 오류 → 경로 초기화/정리 로직 수정  
+- CI 환경에서 WebDriver 버전 불일치 → Docker 이미지 내부 버전 고정  
+
+---
+
+## 🌟 프로젝트 차별점
+
+- **Jenkins + Docker** 기반 일관된 테스트 환경 구축  
+- **Allure Report**로 한눈에 보는 리포트 제공  
+- 병렬 실행으로 **테스트 시간 40~60% 단축**  
+- Google Sheets × Pytest 연동으로 테스트 관리 효율 상승  
+- QA 자동화를 통해 반복 업무 절감 및 품질 안정화  
+
+---
+
+## 📈 테스트 결과 요약
+
+- 전체 테스트케이스: **XX개**  
+- 자동화 적용: **XX개 (커버리지 XX%)**  
+- 평균 실행 시간: **XX → XX분 (병렬 적용 후)**  
+- 파이프라인 성공률: **XX%**  
+- 발견된 주요 이슈: **XX건**  
 
