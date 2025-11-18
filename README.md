@@ -1,5 +1,13 @@
 # 🧠 HelpyChat QA Automation Project
 
+## 🛠️ 기술 스택
+
+| 분류 | 기술 / 도구 |
+|------|-------------|
+| **Testing** | ![Python](./icons/python.png) Python, ![Pytest](./icons/pytest.png) Pytest, ![Selenium](./icons/selenium.png) Selenium, ![Xdist](./icons/xdist.png) Pytest-xdist, ![Rerun](./icons/rerun.png) Pytest-rerunfailures, ![Allure](./icons/allure.png) Allure Report |
+| **DevOps** | ![Jenkins](./icons/jenkins.png) Jenkins, ![Docker](./icons/docker.png) Docker, ![GitLab](./icons/gitlab.png) GitLab, ![Webhook](./icons/webhook.png) Webhook, ![AllurePlugin](./icons/allure_plugin.png) Allure Jenkins Plugin |
+
+
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](#)
 [![Selenium](https://img.shields.io/badge/selenium-automation-green)](#)
