@@ -2,10 +2,13 @@
 
 ## 🛠️ 기술 스택
 
-| 분류 | 기술 / 도구 |
+## 🛠️ 기술 스택
+
+| 분야 | 기술 / 도구 |
 |------|-------------|
-| **Testing** | [![Python](https://img.shields.io/badge/python-3.10+-blue)](#), [![Pytest](https://img.shields.io/badge/pytest-automation-green)](#), [![Selenium](https://img.shields.io/badge/selenium-automation-green)](#), Pytest-xdist, Pytest-rerunfailures, [![Allure](https://img.shields.io/badge/report-allure-important)](#) |
-| **DevOps** | [![Jenkins](https://img.shields.io/badge/jenkins-ci-orange)](#), [![Docker](https://img.shields.io/badge/docker-container-blue)](#), GitLab, Webhook, Allure Jenkins Plugin |
+| **Testing** | ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-Automation-green?logo=pytest&logoColor=white) ![Selenium](https://img.shields.io/badge/Selenium-UI%20Automation-red?logo=selenium&logoColor=white) ![Xdist](https://img.shields.io/badge/Pytest--xdist-Parallel-orange) ![Rerun](https://img.shields.io/badge/Pytest--rerunfailures-Flaky-blue) ![Allure](https://img.shields.io/badge/Allure-Report-important) |
+| **DevOps** | ![Jenkins](https://img.shields.io/badge/Jenkins-CI-orange?logo=jenkins&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker&logoColor=white) ![GitLab](https://img.shields.io/badge/GitLab-VCS-red?logo=gitlab&logoColor=white) ![Webhook](https://img.shields.io/badge/Webhook-Trigger-purple) ![AllurePlugin](https://img.shields.io/badge/Allure--Jenkins-Plugin-blue) |
+
 
 
 
