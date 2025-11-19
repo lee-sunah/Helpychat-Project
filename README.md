@@ -5,7 +5,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 **테스트 자동화 기반 CI/CD 프로세스 구축**을 목표로 합니다.
 
----
+
 
 ## ▪️**HelpyChat 핵심 기능**
 
@@ -21,7 +21,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | **AI 고급 기능** | 파일 분석, PPT 자동 생성, 이미지 생성, 퀴즈 생성, 구글 검색, 심층 조사, 차트 생성 |
 | **커스텀 에이전트** | 에이전트 생성/편집/삭제, 규칙 및 기능 설정, 공개 범위 제어 |
 
----
+
 
 ## ▪️테스트 결과 요약
 
@@ -37,9 +37,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 ![스크린샷 2025-11-18 171342.png](attachment:94a9cc95-89ca-42e6-95d0-6c9f81132c46:스크린샷_2025-11-18_171342.png)
 
----
 
----
 
 ## ▪️ 테스트 케이스 설계
 
@@ -84,7 +82,7 @@ HelpyChat QA 자동화에서는 어떤 기능을 자동화 대상으로 선택�
 
 스크린샷으로 확인하거나, 🔗[전체 TC 구글 시트 보기](https://www.notion.so/%EA%B5%AC%EA%B8%80%EC%8B%9C%ED%8A%B8%EB%A7%81%ED%81%AC)에서 자세히 확인할 수 있습니다.
 
-![image.png](attachment:94f8e4cb-91da-4d92-9269-9145800a2827:image.png)
+<img width="2650" height="1076" alt="tc_sc" src="https://github.com/user-attachments/assets/0eee110e-a6ad-4300-80b7-91ca30bd5708" />
 
 ---
 
