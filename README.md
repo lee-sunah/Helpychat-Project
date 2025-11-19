@@ -5,8 +5,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 **테스트 자동화 기반 CI/CD 프로세스 구축**을 목표로 합니다.
 
-
-<br><br>
+<br>
 
 ## ▪️**HelpyChat 핵심 기능**
 
@@ -24,6 +23,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 
 <br>
+
 ## ▪️테스트 결과 요약
 
 | **항목** | **결과** |
@@ -33,8 +33,9 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | **Jenkins 성공률 평균** | **70.97%** |
 
 <br>
+
 <details>
-<summary><strong>▪Allure 리포트 미리보기</strong></summary>
+<summary><strong>Allure 리포트 미리보기</strong></summary>
 
 <img src="/uploads/55f9f3f73cca07ceaa629f89be7bc801/스크린샷_2025-11-18_171355.png" width="70%"/>
 
@@ -105,7 +106,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 <img src="/uploads/f039be3218cc351b8f615aba72e44d8a/tc_sc.png" width="70%"/>
 
-<br>
+<br><br>
 
 ## ▪️ **기능 완료 현황 (Feature Completion Status)**
 
@@ -185,6 +186,10 @@ allure serve reports/allure/results
 
 <br>
 
+## ▪️서비스 아키텍처
+
+<br>
+
 ## ▪️ 트러블슈팅
 
 
@@ -193,13 +198,13 @@ allure serve reports/allure/results
   - **해결방법**: **`pytest-rerunfailures`**를 적용, 실패한 테스트를 자동으로 재실행
   - **결과**: 테스트 실패율 **9.23%** 감소
   - [🔗 불안정 테스트, Rerun으로 안정화](#)
-
+  <br>
 - **Jenkins 에러 파일 발생**
   - **문제**: Jenkins 실행시 전체에서 Error 파일 28% 발생
   - **해결방법**: conftest.py 파일에 **Headless** 옵션 추가
   - **결과**: Error 파일 전체 비율 **4.6%**까지 감소
   - [🔗 Jenkins 에러 발생과 Headless 설정으로 해결한 과정](#)
-
+  <br>
 - **DOM 렌더링 타이밍에 따른 StaleElementReferenceException 발생**
   - **문제**: 검색 테스트 실행 시 `find_element()` 가 React 렌더링 완료 이전에 실행되어 `StaleElementReferenceException` 에러 발생
   - **해결방법**: 요소 탐색 전에 대기를 배치하여 DOM 업데이트 시간 확보
