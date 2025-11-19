@@ -82,7 +82,7 @@ HelpyChat QA 자동화에서는 어떤 기능을 자동화 대상으로 선택�
 
 스크린샷으로 확인하거나, 🔗[전체 TC 구글 시트 보기](https://www.notion.so/%EA%B5%AC%EA%B8%80%EC%8B%9C%ED%8A%B8%EB%A7%81%ED%81%AC)에서 자세히 확인할 수 있습니다.
 
-<img width="2650" height="1076" alt="tc_sc" src="https://github.com/user-attachments/assets/0eee110e-a6ad-4300-80b7-91ca30bd5708" />
+![tc_sc](/uploads/f039be3218cc351b8f615aba72e44d8a/tc_sc.png)
 
 ---
 
