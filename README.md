@@ -32,12 +32,10 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | **Jenkins 성공률 평균** | **70.97%** |
 
 - **Allure 리포트 미리보기**
-<p align="center">
-    <img src="/uploads/4b68467f304729396accf9231a022cc5/스크린샷_2025-11-18_171342.png" width="70%"/>
-</p>
-<p align="center">
-    <img src="/uploads/55f9f3f73cca07ceaa629f89be7bc801/스크린샷_2025-11-18_171355.png" width="70%"/>
-</p>
+<img src="/uploads/55f9f3f73cca07ceaa629f89be7bc801/스크린샷_2025-11-18_171355.png" width="70%"/>
+
+<img src="/uploads/4b68467f304729396accf9231a022cc5/스크린샷_2025-11-18_171342.png" width="70%"/>
+
 ## ▪️ 테스트 케이스 설계
 
 ### 설계 기준
@@ -81,7 +79,7 @@ HelpyChat QA 자동화에서는 어떤 기능을 자동화 대상으로 선택�
 
 스크린샷으로 확인하거나, 🔗[전체 TC 구글 시트 보기](https://www.notion.so/%EA%B5%AC%EA%B8%80%EC%8B%9C%ED%8A%B8%EB%A7%81%ED%81%AC)에서 자세히 확인할 수 있습니다.
 
-![tc_sc](/uploads/f039be3218cc351b8f615aba72e44d8a/tc_sc.png)
+<img src="/uploads/f039be3218cc351b8f615aba72e44d8a/tc_sc.png" width="70%"/>
 
 ---
 
