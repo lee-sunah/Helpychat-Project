@@ -1,5 +1,4 @@
 # AI HelpyChat QA Project
-
 ---
 
 HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 보증(QA)**하고
@@ -156,7 +155,7 @@ allure serve reports/allure/results
 - CI/CD 자동화 적용으로 **QA 수동 실행 불필요**
 - Flaky 테스트 자동 재시도 적용 (`rerun plugin`)으로 **테스트 안정성 확보**
 
-```bash
+---
 
 ## ▪️ 기술 스택
 
