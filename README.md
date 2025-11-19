@@ -211,4 +211,16 @@ allure serve reports/allure/results
   - **결과**: 오류 재현율 100% → 0%로 감소, 테스트 케이스 정상 통과
   - [🔗 적절한 대기 타이밍과 DOM 렌더링 지연 대응 방법](https://www.notion.so/DOM-2b0990eaa28f80f581f6f4fea2a35a3b?pvs=21)
 
+flowchart LR
+    A[HelpyChat 웹 서비스]
+    B[Pytest + Selenium 자동화 테스트]
+    C[GitLab 저장소]
+    D[Jenkins 파이프라인]
+    E[Docker 컨테이너에서 테스트 실행]
+    F[Allure 리포트]
 
+    A --> B
+    B --> C
+    C -->|Webhook 자동 트리거| D
+    D --> E
+    E --> F
