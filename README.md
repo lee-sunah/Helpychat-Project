@@ -6,6 +6,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 **테스트 자동화 기반 CI/CD 프로세스 구축**을 목표로 합니다.
 
 
+<br><br>
 
 ## ▪️**HelpyChat 핵심 기능**
 
@@ -22,7 +23,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | **커스텀 에이전트** | 에이전트 생성/편집/삭제, 규칙 및 기능 설정, 공개 범위 제어 |
 
 
-
+<br>
 ## ▪️테스트 결과 요약
 
 | **항목** | **결과** |
@@ -31,10 +32,18 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | **자동화 성공 케이스** | **90개** |
 | **Jenkins 성공률 평균** | **70.97%** |
 
-- **Allure 리포트 미리보기**
+<br>
+<details>
+<summary><strong>▪Allure 리포트 미리보기</strong></summary>
+
 <img src="/uploads/55f9f3f73cca07ceaa629f89be7bc801/스크린샷_2025-11-18_171355.png" width="70%"/>
 
+<br><br>
+
 <img src="/uploads/4b68467f304729396accf9231a022cc5/스크린샷_2025-11-18_171342.png" width="70%"/>
+
+</details>
+<br>
 
 ## ▪️ 테스트 케이스 설계
 
@@ -86,6 +95,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
   - 반복 테스트, 회귀 테스트, 매번 실행되는 기능 등
 
 </details>
+<br>
 
 ### 대표 테스트 케이스 미리보기
 
@@ -95,7 +105,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 <img src="/uploads/f039be3218cc351b8f615aba72e44d8a/tc_sc.png" width="70%"/>
 
----
+<br>
 
 ## ▪️ **기능 완료 현황 (Feature Completion Status)**
 
@@ -108,7 +118,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 | 👥 **계정·조직 기능** | **12 / 12 (100%)** | 김설아 |
 | 🎛 **맞춤화 기능** | 20 / 20 (100%) | 김설아 & 최고은 |
 
----
+<br>
 
 ## ▪️ 테스트 환경 및 필요 툴
 
@@ -120,7 +130,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 - **Jenkins LTS**: 자동화 파이프라인
 - 요구 라이브러리: `requirements.txt` 참조
 
----
+<br>
 
 ## ▪️ 테스트 실행 방법 (로컬)
 
@@ -146,7 +156,7 @@ pytest -v
 allure serve reports/allure/results
 ```
 
----
+<br>
 
 ## ▪️ QAespa 프로젝트 핵심 성과 & 강점
 
@@ -164,7 +174,7 @@ allure serve reports/allure/results
 - CI/CD 자동화 적용으로 **QA 수동 실행 불필요**
 - Flaky 테스트 자동 재시도 적용 (`rerun plugin`)으로 **테스트 안정성 확보**
 
----
+<br>
 
 ## ▪️ 기술 스택
 
@@ -172,3 +182,28 @@ allure serve reports/allure/results
 |------|-------------|
 | **Testing** | ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-Automation-green?logo=pytest&logoColor=white) ![Selenium](https://img.shields.io/badge/Selenium-UI%20Automation-red?logo=selenium&logoColor=white) ![Xdist](https://img.shields.io/badge/Pytest--xdist-Parallel-orange) ![Rerun](https://img.shields.io/badge/Pytest--rerunfailures-Flaky-blue) ![Allure](https://img.shields.io/badge/Allure-Report-important) |
 | **DevOps** | ![Jenkins](https://img.shields.io/badge/Jenkins-CI-orange?logo=jenkins&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker&logoColor=white) ![GitLab](https://img.shields.io/badge/GitLab-VCS-red?logo=gitlab&logoColor=white) ![Webhook](https://img.shields.io/badge/Webhook-Trigger-purple) |
+
+<br>
+
+## ▪️ 트러블슈팅
+
+
+- **테스트 중 TimeExecution 오류 발생**
+  - **문제**: 전체 테스트를 실행시 간헐적으로 **`TimeExecution`** 에러 발생
+  - **해결방법**: **`pytest-rerunfailures`**를 적용, 실패한 테스트를 자동으로 재실행
+  - **결과**: 테스트 실패율 **9.23%** 감소
+  - [🔗 불안정 테스트, Rerun으로 안정화](#)
+
+- **Jenkins 에러 파일 발생**
+  - **문제**: Jenkins 실행시 전체에서 Error 파일 28% 발생
+  - **해결방법**: conftest.py 파일에 **Headless** 옵션 추가
+  - **결과**: Error 파일 전체 비율 **4.6%**까지 감소
+  - [🔗 Jenkins 에러 발생과 Headless 설정으로 해결한 과정](#)
+
+- **DOM 렌더링 타이밍에 따른 StaleElementReferenceException 발생**
+  - **문제**: 검색 테스트 실행 시 `find_element()` 가 React 렌더링 완료 이전에 실행되어 `StaleElementReferenceException` 에러 발생
+  - **해결방법**: 요소 탐색 전에 대기를 배치하여 DOM 업데이트 시간 확보
+  - **결과**: 오류 재현율 100% → 0%로 감소, 테스트 케이스 정상 통과
+  - [🔗 적절한 대기 타이밍과 DOM 렌더링 지연 대응 방법](https://www.notion.so/DOM-2b0990eaa28f80f581f6f4fea2a35a3b?pvs=21)
+
+
