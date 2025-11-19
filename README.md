@@ -1,7 +1,7 @@
 # AI HelpyChat QA Project
 
 
-HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 보증(QA)**하고
+HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 보증(QA)** 하고
 
 **테스트 자동화 기반 CI/CD 프로세스 구축**을 목표로 합니다.
 
@@ -204,7 +204,7 @@ allure serve reports/allure/results
 - **Jenkins 에러 파일 발생**
   - **문제**: Jenkins 실행시 전체에서 Error 파일 28% 발생
   - **해결 방법**: conftest.py 파일에 **Headless** 옵션 추가
-  - **결과**: Error 파일 전체 비율 **4.6%**까지 감소
+  - **결과**: Error 파일 전체 비율 **4.6%** 까지 감소
   - [🔗 Jenkins 에러 발생과 Headless 설정으로 해결한 과정](https://kdt-gitlab.elice.io/kanghaelee/team2_project/-/wikis/Jenkins-%EC%97%90%EB%9F%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-Headless-%EC%84%A4%EC%A0%95%EC%9C%BC%EB%A1%9C-%ED%95%B4%EA%B2%B0%ED%95%9C-%EB%B0%A9%EB%B2%95)
   <br>
 - **DOM 렌더링 타이밍에 따른 StaleElementReferenceException 발생**
