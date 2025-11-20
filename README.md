@@ -162,6 +162,38 @@ allure serve reports/allure/results
 
 <br>
 
+▪️Allure 설치 가이드
+<details> <summary><strong>📘 Allure 설치 가이드</strong></summary> <br>
+1️⃣ Python 패키지 설치 (공통)
+pip install pytest allure-pytest
+
+2️⃣ Allure CLI 설치
+🍎 macOS
+brew install allure
+
+
+✔ 설치 확인
+
+allure --version
+
+🪟 Windows
+
+최신 Allure ZIP 다운로드
+👉 https://github.com/allure-framework/allure2/releases
+
+압축 해제
+
+bin 폴더를 환경 변수 PATH에 추가
+예시:
+
+C:\allure-2.27.0\bin
+
+
+설치 확인
+
+allure --version
+
+
 ## ▪️ QAespa 프로젝트 핵심 성과 & 강점
 
 ### 주요 성과
