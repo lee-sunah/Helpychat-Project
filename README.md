@@ -108,7 +108,7 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 
 스크린샷으로 확인하거나, 🔗[전체 TC 구글 시트 보기](https://docs.google.com/spreadsheets/d/1jvFSFtPDwgU6eHVqLnl6Cowe_rB_cDTxe5_iPNAvspA/edit?gid=136598138#gid=136598138)에서 자세히 확인할 수 있습니다.
 
-<img src="/uploads/c3cec26bfad645f1eecb0dec4692ac25/tc_sc.png" width="70%"/>
+<img width="2650" height="1076" alt="image" src="https://github.com/user-attachments/assets/b52b3253-ff8f-452c-baec-6ea1f2cafe7c" />
 
 <br><br>
 
@@ -259,7 +259,7 @@ allure --version
 
 ## ▪️서비스 아키텍처
 
-<img src="/uploads/cf6dcaf49bd8c9ad162c45c938097531/제목을_입력해주세요__1_.jpg" width="70%"/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ff785c7-dbfb-4076-97dc-33ffb4fd28a0" />
 
 
 <br>
