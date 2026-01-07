@@ -37,11 +37,11 @@ HelpyChat QA 프로젝트는 HelpyChat 서비스의 **핵심 기능 품질을 �
 <details>
 <summary><strong>📌 Allure 리포트 미리보기</strong></summary>
 
-<img src="/uploads/e81340c323d1980f7c2b22fe8c0a58ce/스크린샷_2025-11-18_171355.png" width="70%"/>
+<img width="2552" height="1351" alt="image" src="https://github.com/user-attachments/assets/b3473ec9-e81d-4271-b701-42886488ebed" />
 
 <br>
 
-<img src="/uploads/406677cfd02704d2621180da8499888b/스크린샷_2025-11-18_171342.png" width="70%"/>
+<img width="2559" height="1363" alt="image" src="https://github.com/user-attachments/assets/98fdcad2-0d90-4ff6-b85f-feb723832bdc" />
 
 
 </details>
